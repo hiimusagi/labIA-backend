@@ -1,4 +1,4 @@
-package com.LabIA.gradeReport;
+package com.labia.gradeReport;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
