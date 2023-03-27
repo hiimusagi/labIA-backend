@@ -12,8 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloController {
 
 //    Get == method.get
-@GetMapping("/hello")
- public String sayHello() {
-    return "hello";
- }
+	@GetMapping("/hello")
+	public String sayHello() {
+		return "hello";
+	}
 }
