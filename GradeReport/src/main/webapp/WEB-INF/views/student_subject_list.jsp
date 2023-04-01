@@ -24,6 +24,7 @@
     </style>
 </head>
 <body>
+<h3 style="text-align: center">Curriculums Of Student ${studentId}</h3>
 <div class="container mt-5">
     <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Enter student ID" aria-label="Search">

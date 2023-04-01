@@ -1,5 +1,6 @@
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.fasterxml.jackson.annotation.JsonTypeInfo" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +11,12 @@
 </head>
 
 <body>
-<h3>${studentId}</h3>
+<h3 style="text-align: center; font-weight: bold">Grade Report Of Subject ${subjectCode} Of Student ${studentId}</h3>
 <div class="container-fluid py-3">
     <div class="container">
         <hr>
         <div class="row justify-content-between">
-            <a href="" class="btn-primary btn btn-default">Return to main page</a>  <!--TODO: add link-->
-            <form class="form-inline my-2 my-lg-0" method="GET" action="">  <!--TODO: add action-->
-                <input type="hidden" name="action" value="search-student">
-                <label for="12"></label>
-                <input class="form-control mr-sm-2" id="12" type="text" placeholder="Search" name="search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <a href="/student/subjects" class="btn-primary btn btn-default">Return to main page</a>  <!--TODO: add link-->
         </div>
     </div>
     <hr>
@@ -35,12 +30,12 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${Assessments}" var = "a">
-            <tr>
-                <td>${a.assessmentId}</td>
-                <td>${a.assessmentType}</td>
-                <td>${a.assessmentGrade}</td>
-            </tr>
+            <c:forEach items="${Assessments}" var="a">
+                <tr>
+                    <td>${a.assessmentId}</td>
+                    <td>${a.assessmentType}</td>
+                    <td>${a.assessmentGrade}</td>
+                </tr>
             </c:forEach>
             </tbody>
         </table>
