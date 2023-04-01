@@ -16,7 +16,7 @@
     <div class="container">
         <hr>
         <div class="row justify-content-between">
-            <a href="/student/subjects" class="btn-primary btn btn-default">Return to main page</a>  <!--TODO: add link-->
+            <a href="/student/subjects" class="btn-primary btn btn-default">Return</a>  <!--TODO: add link-->
         </div>
     </div>
     <hr>
