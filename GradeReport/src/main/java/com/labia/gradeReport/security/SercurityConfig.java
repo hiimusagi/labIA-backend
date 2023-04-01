@@ -26,7 +26,7 @@ public class SercurityConfig {
                     .csrf().disable()
                     .authorizeRequests()
                     .antMatchers("/", "index", "/css/*", "/js/*", "/login").permitAll()
-                    .antMatchers("/api/**").hasRole(UserRole.STUDENT.name())
+                    .antMatchers("/api/**").hasAnyRole(UserRole.STUDENT.name(),UserRole.LECTURE.name())
                     .anyRequest()
                     .authenticated();
 

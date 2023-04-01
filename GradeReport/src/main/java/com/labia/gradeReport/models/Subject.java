@@ -15,7 +15,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class Subject {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subject_code")
     private String subjectCode;
 

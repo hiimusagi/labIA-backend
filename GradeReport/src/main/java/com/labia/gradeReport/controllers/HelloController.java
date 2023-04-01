@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloController {
     private final UserService userService;
 
-    //    Get == method.get
     @GetMapping("/hello")
     public String sayHello(Authentication authentication, Model model) {
         Users users = userService.getAuthenticatedUser(authentication);
@@ -22,17 +21,8 @@ public class HelloController {
         return "hello";
     }
 
-    @GetMapping("/login")
-    public String getLecturePage() {
+    @GetMapping("/")
+    public String getLoginPage() {
         return "login";
-    }
-    @PostMapping("/login")
-    public String handleLogin(@RequestParam String username, @RequestParam String password) {
-        /*TODO
-        -2 conditions using sql query.
-            +If login like student, redirect to student something
-            +If login like lecture, redirect to lecture something
-         */
-        return "lecture_page";
     }
 }
