@@ -26,6 +26,7 @@ public class AssessmentsController {
         Users users = userService.getAuthenticatedUser(authentication);
         Student student = studentServices.getStudentByUserId(users.getUserId());
         model.addAttribute("studentId", student.getStudentId());
+        model.addAttribute("subjectCode", subjectId);
         model.addAttribute("Assessments", assessmentsServices.getAssessmentsOfStudentAndSubject(student.getStudentId(), subjectId));
         return "mark_view";
     }
