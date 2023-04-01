@@ -1,0 +1,27 @@
+package com.labia.gradeReport.security;
+
+public enum UserPermission {
+	STUDENT_GRADE_READ_ALL("STUDENT_GRADE_READ_ALL:read"),
+	STUDENT_GRADE_WRITE_ALL("STUDENT_GRADE_WRITE_ALL:write"),
+	STUDENT_GRADE_UPDATE_ALL("STUDENT_GRADE_UPDATE_ALL:update"),
+	STUDENT_GRADE_DELETE_ALL("STUDENT_GRADE_DELETE_ALL:delete"),
+	
+	STUDENT_GRADE_READ_INDIVIDUAL("STUDENT_GRADE_READ_INDIVIDUAL:read"),
+	STUDENT_GRADE_WRITE_INDIVIDUAL("STUDENT_GRADE_WRITE_INDIVIDUAL:write"),
+	STUDENT_GRADE_UPDATE_INDIVIDUAL("STUDENT_GRADE_UPDATE_INDIVIDUAL:update"),
+	STUDENT_GRADE_DELETE_INDIVIDUAL("STUDENT_GRADE_DELETE_INDIVIDUAL:delete"),
+	
+	CURICULLUM_READ("CURICULLUM_READ:read"),
+	CURICULLUM_WRITE("CURICULLUM_WRITE:write");
+	
+	private final String permission;
+
+	private UserPermission(String permission) {
+		this.permission = permission;
+	}
+	
+	public String getPermission() {
+        return permission;
+    }
+	
+}

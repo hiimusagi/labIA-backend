@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<h3>${studentId}</h3>
 <div class="container-fluid py-3">
     <div class="container">
         <hr>
@@ -22,42 +22,34 @@
                 <input class="form-control mr-sm-2" id="12" type="text" placeholder="Search" name="search">
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
             </form>
-
         </div>
     </div>
-
     <hr>
-
     <div class="container mt-3">
         <table class="table table-light table-hover">
             <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Subject</th>
-                <th scope="col">Student ID</th>
-                <th scope="col">Type</th>
-                <th scope="col">Mark</th>
+                <th scope="col">assessmentType</th>
+                <th scope="col">assessmentGrade</th>
             </tr>
             </thead>
             <tbody>
-            <%for (int i = 0; i <= 5; i++) {%>
+            <c:forEach items="${Assessments}" var = "a">
             <tr>
-                <th scope="row"><%=i%></th>
-                <td>Math</td>
-                <td>1</td>
-                <td>Assignment</td>
-                <td>100
-                </td>
+                <td>${a.assessmentId}</td>
+                <td>${a.assessmentType}</td>
+                <td>${a.assessmentGrade}</td>
             </tr>
-            <%}%>
+            </c:forEach>
             </tbody>
         </table>
     </div>
 </div>
 
-<script src="./js/jquery-3.3.1.min.js"></script>
-<script src="./js/popper.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/main.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
