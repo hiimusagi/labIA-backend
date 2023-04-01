@@ -25,9 +25,14 @@
 </head>
 <body>
 <h3 style="text-align: center">Curriculums Of Student ${studentId}</h3>
+<div class="container">
+    <hr>
+    <div class="row justify-content-between">
+        <a href="/hello" class="btn-primary btn btn-default">Return</a>  <!--TODO: add link-->
+    </div>
+</div>
 <div class="container mt-5">
     <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Enter student ID" aria-label="Search">
         <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
     <table class="table mt-5">
