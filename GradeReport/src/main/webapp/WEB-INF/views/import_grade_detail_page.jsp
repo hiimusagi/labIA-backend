@@ -27,26 +27,26 @@
             </div>
             <div class="modal-body">
                 <!-- Import File Modal -->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="importModalLabel">Import Grades File</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="fileUpload">Choose File:</label>
-                                <input type="file" class="form-control-file" id="fileUpload">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Import</button>
-                    </div>
-                </div>
+                <!--                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="importModalLabel">Import Grades File</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="fileUpload">Choose File:</label>
+                                                <input type="file" class="form-control-file" id="fileUpload">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Import</button>
+                                    </div>
+                                </div>-->
                 <table class="table mt-3">
                     <thead>
                         <tr>
@@ -55,17 +55,23 @@
                             <th>PT1</th>
                             <th>PT2</th>
                             <th>FE</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var = "s" begin="0" end="${studentsOfSubjectTermPT1List.size()-1}">
-                        <tr>
-                            <td>${studentsOfSubjectTermPT1List.get(s).getStudentId()}</td>
-                            <td>${studentsOfSubjectTermPT1List.get(s).getStudentName()}</td>
-                            <td><input type="text" value="${studentsOfSubjectTermPT1List.get(s).getAssessmentGrade()}" class="form-control"></td>
-                            <td><input type="text" value="${studentsOfSubjectTermPT2List.get(s).getAssessmentGrade()}" class="form-control"></td>
-                            <td><input type="text" value="${studentsOfSubjectTermFEList.get(s).getAssessmentGrade()}" class="form-control"></td>
-                        </tr>
+                        <form method="post" action="/submit-forms" class="my-form"> 
+                            <tr>
+                                <td>${studentsOfSubjectTermPT1List.get(s).getStudentId()}</td>
+                                <td>${studentsOfSubjectTermPT1List.get(s).getStudentName()}</td>
+                                <input type="hidden" name="studentId" value="${studentsOfSubjectTermPT1List.get(s).getStudentId()}"/>
+                                <input type="hidden" name="subjectCode" value="${studentsOfSubjectTermPT1List.get(s).getSubjectCode()}"/>
+                                <td><input name="pt1" type="text" value="${studentsOfSubjectTermPT1List.get(s).getAssessmentGrade()}" class="form-control"></td>
+                                <td><input name="pt2" type="text" value="${studentsOfSubjectTermPT2List.get(s).getAssessmentGrade()}" class="form-control"></td>
+                                <td><input name="fe" type="text" value="${studentsOfSubjectTermFEList.get(s).getAssessmentGrade()}" class="form-control"></td>
+                                <td><button id="submit-btn">Submit</button></td>
+                            </tr>
+                        </form>
                     </c:forEach>  
                     <!-- Add more rows for additional students -->
                     </tbody>
@@ -75,6 +81,5 @@
 
         <!-- Bootstrap JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-
     </body>
 </html>

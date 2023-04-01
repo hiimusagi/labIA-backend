@@ -31,7 +31,7 @@ public class StudentsOfSubjectTermDao extends CommonSearchColumn {
             + "grade_report.subjects.subject_code as subjectCode,\n"
             + "grade_report.term.term_id as termId,\n"
             + "grade_report.assessments.assessment_type as assessmentType,\n"
-            + "grade_report.assessments.assessment_grade as assessmentGrade\n"
+            + "MAX(grade_report.assessments.assessment_grade) AS assessmentGrade\n"
             + "from grade_report.student \n"
             + "join grade_report.curriculums on grade_report.student.curriculum_id = grade_report.curriculums.curriculum_id\n"
             + "join grade_report.term on grade_report.term.curriculum_id = grade_report.curriculums.curriculum_id\n"
@@ -44,7 +44,7 @@ public class StudentsOfSubjectTermDao extends CommonSearchColumn {
 
     private final EntityManagerDao entityManager;
 
-    public List<StudentsOfSubjectTerm> getStudentsOfSubjectTerm(String subjectCode,String assessmentType) {
+    public List<StudentsOfSubjectTerm> getStudentsOfSubjectTerm(String subjectCode, String assessmentType) {
         Session session = entityManager.session();
         String sql = getStudentsOfSubjectTerm;
         NativeQuery<StudentsOfSubjectTerm> query = session.createNativeQuery(sql.toString());
