@@ -6,4 +6,9 @@ public class CommonSearchColumn {
             query.setParameter(parameter, value);
         }
     }
+    public void setParameterString(NativeQuery<?> query, String parameter, String value) {
+        if (!value.isEmpty()) {
+            query.setParameter(parameter, value);
+        }
+    }
 }

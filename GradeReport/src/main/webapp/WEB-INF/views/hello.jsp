@@ -24,13 +24,48 @@
     </style>
 </head>
 <body>
-<h3 style="text-align: center">Welcome ${users.email}</h3>
+<h3 style="text-align: center">
+  Welcome ${users.email}
+  <a href="/logout" class="btn btn-danger" style="border-radius: 25px; padding: 5px 15px; margin-left: 10px;">
+    Logout
+  </a>
+</h3>
+<div class="container">
+    <div class="row justify-content-center">
+        <c:if test="${users.roles == 3}">
+        <div class="col-md-6">
+        <div class="card">
+          <h5 class="card-header">My Subject</h5>
+          <div class="card-body">
+            <p class="card-text">Click the button below to view your curriculum.</p>
+            <a href="/student/subjects" class="btn btn-primary">View Grades</a>
+          </div>
+        </div>
+      </div>
+        </c:if>
+        <c:if test="${users.roles == 2}">
+      <div class="col-md-6">
+        <div class="card">
+          <h5 class="card-header">View Student Grade</h5>
+          <div class="card-body">
+            <p class="card-text">Click the button below to view student grades.</p>
+            <a href="/studentGradePage" class="btn btn-primary">View Grades</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <h5 class="card-header">Import Student Grade</h5>
+          <div class="card-body">
+            <p class="card-text">Click the button below to import student grades.</p>
+            <a href="/importStudentGradePage" class="btn btn-primary">Import Grades</a>
+          </div>
+        </div>
+      </div>
+      </c:if>
+    </div>
+  </div>
 <div>
-    <a style="text-align: center" class="btn-primary btn btn-default" href="/logout">Logout</a>
-    <c:if test="${users.roles == 3}">
-        <a style="text-align: center"  class="btn-primary btn btn-default" href="/student/subjects">My Subject</a>
-    </c:if>
-</div>
 <!-- Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 </body>

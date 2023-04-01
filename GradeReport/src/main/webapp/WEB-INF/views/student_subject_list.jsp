@@ -32,9 +32,6 @@
     </div>
 </div>
 <div class="container mt-5">
-    <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
     <table class="table mt-5">
         <thead>
         <tr>
